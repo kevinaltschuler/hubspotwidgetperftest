@@ -9,11 +9,11 @@
   <script>
     var urlParams = new URLSearchParams(window.location.search);
     var portalId = urlParams.get('portalId');
-    console.log(portalId);
+    var env = urlParams.get('env');
     
     var hubspotEmbed = document.createElement('script');
 
-    hubspotEmbed.setAttribute('src',`//js.hs-scriptsqa.com/${portalId || 100636321}.js`);
+    hubspotEmbed.setAttribute('src',`//js.hs-scripts${env || 'qa'}.com/${portalId || 100636321}.js`);
     hubspotEmbed.setAttribute('id','hs-script-loader');
     hubspotEmbed.setAttribute('type','text/javascript');
 

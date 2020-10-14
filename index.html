@@ -6,10 +6,18 @@
 
   <title>widget perf test</title>
   
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scriptsqa.com/100636321.js"></script>
-  <!-- End of HubSpot Embed Code -->
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var portalId = urlParams.get('portalId');
+    
+    var hubspotEmbed = document.createElement('script');
 
+    hubspotEmbed.setAttribute('src','//js.hs-scriptsqa.com/' + portalId || 100636321 +'.js');
+    hubspotEmbed.setAttribute('id','hs-script-loader');
+    hubspotEmbed.setAttribute('type','text/javascript');
+
+    document.head.appendChild(hubspotEmbed)
+  </script>
 </head>
 
 <body>
